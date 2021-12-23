@@ -1,0 +1,22 @@
+
+INSERT INTO public.addresses (id, country, zip_code, city, street, house_no, flat) VALUES (1, 'Austria', '1030', 'Vienna', 'Ungargasse', '2', '2');
+INSERT INTO public.addresses (id, country, zip_code, city, street, house_no, flat) VALUES (2, 'Austria', '1030', 'Vienna', 'Ungargasse', '3', '3');
+INSERT INTO public.addresses (id, country, zip_code, city, street, house_no, flat) VALUES (3, 'Austria', '1030', 'Vienna', 'Ungargasse', '1', '4');
+INSERT INTO public.addresses (id, country, zip_code, city, street, house_no, flat) VALUES (4, 'Austria', '1030', 'Vienna', 'Ungargasse', '2', '5');
+INSERT INTO public.addresses (id, country, zip_code, city, street, house_no, flat) VALUES (5, 'Austria', '1030', 'Vienna', 'Ungargasse', '3', '6');
+INSERT INTO public.addresses (id, country, zip_code, city, street, house_no, flat) VALUES (6, 'Austria', '1030', 'Vienna', 'Ungargasse', '1', '7');
+INSERT INTO public.addresses (id, country, zip_code, city, street, house_no, flat) VALUES (7, 'Austria', '1030', 'Vienna', 'Ungargasse', '2', '8');
+INSERT INTO public.addresses (id, country, zip_code, city, street, house_no, flat) VALUES (8, 'Austria', '1030', 'Vienna', 'Ungargasse', '3', '9');
+INSERT INTO public.addresses (id, country, zip_code, city, street, house_no, flat) VALUES (9, 'Austria', '1030', 'Vienna', 'Ungargasse', '1', '10');
+INSERT INTO public.addresses (id, country, zip_code, city, street, house_no, flat) VALUES (10, 'Austria', '1030', 'Vienna', 'Ungargasse', '2', '1');
+INSERT INTO public.addresses (id, country, zip_code, city, street, house_no, flat) VALUES (11, 'Austria', '1030', 'Vienna', 'Ungargasse', '3', '2');
+INSERT INTO public.addresses (id, country, zip_code, city, street, house_no, flat) VALUES (12, 'Austria', '1030', 'Vienna', 'Ungargasse', '1', '3');
+INSERT INTO public.addresses (id, country, zip_code, city, street, house_no, flat) VALUES (13, 'Austria', '1030', 'Vienna', 'Ungargasse', '2', '4');
+INSERT INTO public.addresses (id, country, zip_code, city, street, house_no, flat) VALUES (14, 'Austria', '1030', 'Vienna', 'Ungargasse', '3', '5');
+INSERT INTO public.addresses (id, country, zip_code, city, street, house_no, flat) VALUES (15, 'Austria', '1030', 'Vienna', 'Ungargasse', '1', '6');
+INSERT INTO public.addresses (id, country, zip_code, city, street, house_no, flat) VALUES (16, 'Austria', '1030', 'Vienna', 'Ungargasse', '2', '7');
+INSERT INTO public.addresses (id, country, zip_code, city, street, house_no, flat) VALUES (17, 'Austria', '1030', 'Vienna', 'Ungargasse', '3', '8');
+INSERT INTO public.addresses (id, country, zip_code, city, street, house_no, flat) VALUES (18, 'Austria', '1030', 'Vienna', 'Ungargasse', '1', '9');
+INSERT INTO public.addresses (id, country, zip_code, city, street, house_no, flat) VALUES (19, 'Austria', '1030', 'Vienna', 'Ungargasse', '2', '10');
+INSERT INTO public.addresses (id, country, zip_code, city, street, house_no, flat) VALUES (20, 'Austria', '1030', 'Vienna', 'Ungargasse', '3', '1');
+commit;

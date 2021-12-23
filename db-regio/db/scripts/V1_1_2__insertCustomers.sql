@@ -1,0 +1,21 @@
+
+INSERT INTO public.customers (id, login, full_name, discount, address_id) VALUES (1, 'login1', 'Full name of customer  1', 1, 1);
+INSERT INTO public.customers (id, login, full_name, discount, address_id) VALUES (2, 'login2', 'Full name of customer  2', 2, 2);
+INSERT INTO public.customers (id, login, full_name, discount, address_id) VALUES (3, 'login3', 'Full name of customer  3', 3, 3);
+INSERT INTO public.customers (id, login, full_name, discount, address_id) VALUES (4, 'login4', 'Full name of customer  4', 4, 4);
+INSERT INTO public.customers (id, login, full_name, discount, address_id) VALUES (5, 'login5', 'Full name of customer  5', 5, 5);
+INSERT INTO public.customers (id, login, full_name, discount, address_id) VALUES (6, 'login6', 'Full name of customer  6', 6, 6);
+INSERT INTO public.customers (id, login, full_name, discount, address_id) VALUES (7, 'login7', 'Full name of customer  7', 7, 7);
+INSERT INTO public.customers (id, login, full_name, discount, address_id) VALUES (8, 'login8', 'Full name of customer  8', 8, 8);
+INSERT INTO public.customers (id, login, full_name, discount, address_id) VALUES (9, 'login9', 'Full name of customer  9', 9, 9);
+INSERT INTO public.customers (id, login, full_name, discount, address_id) VALUES (10, 'login10', 'Full name of customer  10', 10, 10);
+INSERT INTO public.customers (id, login, full_name, discount, address_id) VALUES (11, 'login11', 'Full name of customer  11', 11, 11);
+INSERT INTO public.customers (id, login, full_name, discount, address_id) VALUES (12, 'login12', 'Full name of customer  12', 12, 12);
+INSERT INTO public.customers (id, login, full_name, discount, address_id) VALUES (13, 'login13', 'Full name of customer  13', 13, 13);
+INSERT INTO public.customers (id, login, full_name, discount, address_id) VALUES (14, 'login14', 'Full name of customer  14', 14, 14);
+INSERT INTO public.customers (id, login, full_name, discount, address_id) VALUES (15, 'login15', 'Full name of customer  15', 15, 15);
+INSERT INTO public.customers (id, login, full_name, discount, address_id) VALUES (16, 'login16', 'Full name of customer  16', 16, 16);
+INSERT INTO public.customers (id, login, full_name, discount, address_id) VALUES (17, 'login17', 'Full name of customer  17', 17, 17);
+INSERT INTO public.customers (id, login, full_name, discount, address_id) VALUES (18, 'login18', 'Full name of customer  18', 18, 18);
+INSERT INTO public.customers (id, login, full_name, discount, address_id) VALUES (19, 'login19', 'Full name of customer  19', 19, 19);
+INSERT INTO public.customers (id, login, full_name, discount, address_id) VALUES (20, 'login20', 'Full name of customer  20', 20, 20);
