@@ -13,53 +13,69 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>Railway</name>
     <description>Railway</description>
+
     <properties>
         <java.version>11</java.version>
         <spring-cloud.version>2021.0.0</spring-cloud.version>
         <wavefront.version>2.2.2</wavefront.version>
+        <junit-jupiter.version>5.3.2</junit-jupiter.version>
+        <mockito.version>2.24.0</mockito.version>
     </properties>
     <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId>
-        </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-hateoas</artifactId>
         </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-webflux</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.wavefront</groupId>
-            <artifactId>wavefront-spring-boot-starter</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-sleuth</artifactId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
 
         <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-            <scope>runtime</scope>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-hateoas</artifactId>
         </dependency>
+
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
+
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>junit</groupId>
+                    <artifactId>junit</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
+
+        <!-- junit 5 -->
         <dependency>
-            <groupId>io.projectreactor</groupId>
-            <artifactId>reactor-test</artifactId>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit-jupiter.version}</version>
             <scope>test</scope>
         </dependency>
+
+
+
     </dependencies>
     <dependencyManagement>
         <dependencies>
@@ -70,13 +86,8 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-            <dependency>
-                <groupId>com.wavefront</groupId>
-                <artifactId>wavefront-spring-boot-bom</artifactId>
-                <version>${wavefront.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
+
+
         </dependencies>
     </dependencyManagement>
 
@@ -92,6 +103,22 @@
                             <artifactId>lombok</artifactId>
                         </exclude>
                     </excludes>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-maven-plugin</artifactId>
+                <version>8.2.0</version>
+                <configuration>
+                    <user>railway</user>
+                    <password>secret</password>
+                    <schemas>
+                        <schema>public</schema>
+                    </schemas>
+                    <url>jdbc:postgresql://localhost:5432/railway</url>
+                    <locations>
+                        <location>filesystem:db/scripts</location>
+                    </locations>
                 </configuration>
             </plugin>
         </plugins>
