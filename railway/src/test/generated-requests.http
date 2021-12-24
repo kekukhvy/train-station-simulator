@@ -4,4 +4,23 @@ GET http://localhost:8082/trainstations/1
 
 
 ###
+GET http://localhost:8082/trainstations?city=Kiev
+
+###
+GET http://localhost:8082/trainstations?name=Kiev-Sviatoshino
+
+###
+GET http://localhost:8082/trainstations?name=Kiev-Sviatoshino&city=Kiev
+
+###
 GET http://localhost:8082/trainstations
+
+
+###
+POST http://localhost:8082/trainstations
+Content-Type: application/json
+
+{
+  "city": "Kiev",
+  "name": "Kiev-Sviatoshino"
+}

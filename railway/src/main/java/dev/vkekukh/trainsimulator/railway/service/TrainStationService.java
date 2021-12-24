@@ -10,13 +10,15 @@ import java.util.Optional;
 
 public interface TrainStationService {
 
-    Optional<TrainStation> findByName(String name);
+    Optional <TrainStation> findByCityAndName(String city, String name);
+
+    List<TrainStation> findByName(String name);
 
     List<TrainStation> findByCity(String city);
 
     Optional<TrainStation> findById(Long id);
 
-    TrainStation saveTrainStation(TrainStation trainStation) throws ValidationException;
+    TrainStation save(TrainStation trainStation) throws ValidationException;
 
     void deleteById(Long id) throws NotFoundException;
 

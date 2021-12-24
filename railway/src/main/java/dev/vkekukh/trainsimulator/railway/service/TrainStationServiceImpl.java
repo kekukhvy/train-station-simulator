@@ -23,7 +23,7 @@ public class TrainStationServiceImpl implements TrainStationService {
     }
 
     @Override
-    public Optional<TrainStation> findByName(String name) {
+    public List<TrainStation> findByName(String name) {
         return trainStationRepository.findByName(name);
     }
 
@@ -43,7 +43,12 @@ public class TrainStationServiceImpl implements TrainStationService {
     }
 
     @Override
-    public TrainStation saveTrainStation(TrainStation trainStation) throws ValidationException {
+    public Optional<TrainStation> findByCityAndName(String city, String name) {
+        return trainStationRepository.findByCityAndName(city, name);
+    }
+
+    @Override
+    public TrainStation save(TrainStation trainStation) throws ValidationException {
         if (trainStation.getCity() == null || trainStation.getName() == null)
             throw new ValidationException("City and name for train station can't be null");
 

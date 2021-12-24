@@ -5,17 +5,10 @@ import dev.vkekukh.trainsimulator.railway.exception.ValidationException;
 import dev.vkekukh.trainsimulator.railway.model.TrainStation;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-import javax.persistence.EntityManager;
-import javax.sql.DataSource;
 import java.util.List;
-import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -29,9 +22,9 @@ class TrainStationServiceImplTest {
     @Test
     @DisplayName("Test find station by name")
     void findByName() {
-        Optional<TrainStation> trainStation = trainStationService.findByName("Киев Центральный");
+        List<TrainStation> trainStation = trainStationService.findByName("Киев Центральный");
         assertNotNull(trainStation);
-        assertTrue(trainStation.get().getCity().equals("Киев"));
+        assertTrue(trainStation.stream().findFirst().get().getCity().equals("Киев"));
     }
 
     @Test
@@ -43,7 +36,7 @@ class TrainStationServiceImplTest {
     @Test
     void saveTrainStationError() {
         Exception exception = assertThrows(ValidationException.class, () -> {
-            trainStationService.saveTrainStation(new TrainStation());
+            trainStationService.save(new TrainStation());
         });
 
         String expectedMessage = "City and name for train station can't be null";
@@ -55,7 +48,7 @@ class TrainStationServiceImplTest {
     @Test
     void saveTrainStation() throws ValidationException {
 
-        TrainStation station = trainStationService.saveTrainStation(new TrainStation()
+        TrainStation station = trainStationService.save(new TrainStation()
                 .setCity("Киев").setName("Киев-Дарница"));
 
         assertNotNull(station.getId());
@@ -63,14 +56,14 @@ class TrainStationServiceImplTest {
 
     @Test
     void deleteById() throws NotFoundException {
-        Long id = trainStationService.findByName("Киев-Дарница").get().getId();
+        Long id = trainStationService.findByName("Киев-Дарница").stream().findFirst().get().getId();
         trainStationService.deleteById(id);
         assertTrue(trainStationService.findByName("Киев-Дарница").isEmpty());
     }
 
     @Test
     void delete() throws ValidationException {
-        TrainStation station = trainStationService.saveTrainStation(new TrainStation()
+        TrainStation station = trainStationService.save(new TrainStation()
                 .setCity("Киев").setName("Киев-Дарница"));
         trainStationService.delete(station);
 
